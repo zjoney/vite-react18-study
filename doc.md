@@ -1,11 +1,3 @@
-# vite-react18-study
-Vite+Typescript+React18工程化搭建
-- React18中的ConcurrentMode(并发模式)
-- Suspense、SuspenseList和ErrorBoundary实战
-- 更新优先级和setState批处理优化
-- startTransition和useDeferredValue实战
-
-
 ## 1. React18介绍
 
 -   [React 18发布计划](https://zh-hans.reactjs.org/blog/2021/06/08/the-plan-for-react-18.html)
