@@ -51,9 +51,9 @@
 
 ### 3.2 安装
 
--   [plugin-react-refresh](http://zhufengpeixun.com/strong/html/plugin-react-refresh)支持react组件的热更新
+-   [plugin-react-refresh]支持react组件的热更新
 
-```
+```js
 npm install react@alpha react-dom@alpha @types/react @types/react-dom -S
 npm install vite typescript @vitejs/plugin-react-refresh -D
 node ./node_modules/esbuild/install.js
@@ -61,7 +61,7 @@ node ./node_modules/esbuild/install.js
 
 ### 3.3 vite.config.ts
 
-```
+```js
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 export default defineConfig({
@@ -73,7 +73,7 @@ export default defineConfig({
 
 tsconfig.json
 
-```
+```js
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -100,9 +100,9 @@ tsconfig.json
 
 package.json
 
-```
+```js
 {
-  "name": "zhufeng-react18",
+  "name": "react18",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -133,7 +133,7 @@ package.json
 
 index.html
 
-```
+```js
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -156,7 +156,7 @@ index.html
 
 src\main.tsx
 
-```
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 ReactDOM.createRoot(
@@ -166,7 +166,7 @@ ReactDOM.createRoot(
 
 ### 3.8 启动
 
-```
+```js
 npm run dev
 ```
 
@@ -179,7 +179,7 @@ npm run dev
 
 -   npm强制安装可以使用 `-f` 或 `--force` 参数
 
-    ```
+    ```js
     npm install react-router-dom @types/react-router-dom --force -S
     ```
 
@@ -187,7 +187,7 @@ npm run dev
 
 src\main.tsx
 
-```
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 +import {HashRouter as Router,Route,Link} from 'react-router-dom';
@@ -208,7 +208,7 @@ ReactDOM.createRoot(
 
 src\routes\BatchState.tsx
 
-```
+```js
 import React, { Component } from 'react'
 interface Props { }
 interface State {
@@ -259,7 +259,7 @@ export default class extends Component<Props, State> {
 
 src\main.tsx
 
-```
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {HashRouter as Router,Route,Link} from 'react-router-dom';
@@ -283,7 +283,7 @@ ReactDOM.createRoot(
 
 src\components\ErrorBoundary.tsx
 
-```
+```js
 import React from "react";
 interface Props{
     fallback:React.ReactNode
@@ -309,7 +309,7 @@ export default class ErrorBoundary extends React.Component<Props> {
 
 src\routes\Suspense.tsx
 
-```
+```js
 import React, { Component, Suspense } from 'react'
 import ErrorBoundary from "../components/ErrorBoundary";
 function createResource(promise: Promise<any>) {
@@ -368,7 +368,7 @@ export default class extends Component {
 
 src\components\Suspense.tsx
 
-```
+```js
 import React, { Component } from 'react'
 interface SuspenseProps {
     fallback: React.ReactNode
@@ -411,7 +411,7 @@ export default class Suspense extends React.Component<SuspenseProps, SuspenseSta
 
 ### 6.1 src\main.tsx
 
-```
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {HashRouter as Router,Route,Link} from 'react-router-dom';
@@ -438,7 +438,7 @@ ReactDOM.createRoot(
 
 src\routes\SuspenseList.tsx
 
-```
+```js
 import React, { Component, Suspense, SuspenseList } from 'react'
 import ErrorBoundary from "../components/ErrorBoundary";
 function createResource(promise: Promise<any>) {
@@ -518,7 +518,7 @@ export default class extends Component {
 
 ### 7.1 src\main.tsx
 
-```
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {HashRouter as Router,Route,Link} from 'react-router-dom';
@@ -548,7 +548,7 @@ ReactDOM.createRoot(
 
 src\routes\StartTransition.tsx
 
-```
+```js
 import React, { startTransition, useEffect, useState } from 'react';
 function getSuggestions(keyword: string):Promise<Array<string>> {
   let items =  new Array(10000).fill(0).map((item: number, index: number) => keyword + index);
@@ -599,7 +599,7 @@ export default function () {
 
 src\main.tsx
 
-```
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {HashRouter as Router,Route,Link} from 'react-router-dom';
@@ -632,7 +632,7 @@ ReactDOM.createRoot(
 
 src\routes\UseDeferredValue.tsx
 
-```
+```js
 import React, { startTransition, useEffect, useState,useDeferredValue } from 'react';
 function getSuggestions(keyword: string):Promise<Array<string>> {
   let items =  new Array(10000).fill(0).map((item: number, index: number) => keyword + index);
@@ -688,7 +688,7 @@ export default function () {
 
 ### 9.1 src\main.tsx
 
-```
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {HashRouter as Router,Route,Link} from 'react-router-dom';
@@ -724,7 +724,7 @@ ReactDOM.createRoot(
 
 src\routes\UseTransition.tsx
 
-```
+```js
 import React, { Component, Suspense, useTransition, useState } from 'react'
 import ErrorBoundary from "../components/ErrorBoundary";
 function fetchData(id: number) {
